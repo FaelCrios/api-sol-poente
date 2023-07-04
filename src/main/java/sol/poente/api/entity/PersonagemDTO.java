@@ -26,6 +26,7 @@ public class PersonagemDTO {
     public PersonagemDTO(){}
 
     public PersonagemDTO(Personagem personagem){
+        this.id = personagem.getId();
         this.nome = personagem.getNome();
         this.sobrenome = personagem.getSobrenome();
         this.afiliacao = personagem.getAfiliacao();

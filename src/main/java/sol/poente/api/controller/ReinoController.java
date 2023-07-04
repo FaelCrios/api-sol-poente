@@ -4,9 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import sol.poente.api.entity.PersonagemDTO;
 import sol.poente.api.entity.Reino;
 import sol.poente.api.entity.ReinoDTO;
@@ -30,5 +28,11 @@ public class ReinoController {
     @GetMapping(value = "/normal")
     public List<Reino> listarReinos(){
         return repository.findAll();
+    }
+
+    @GetMapping(value = "/{localizacao}")
+    public ReinoDTO reinoPorLoc(@PathVariable String localizacao){
+        Reino reino = repository.findByLocalizacao(localizacao);
+        return  new ReinoDTO(reino);
     }
 }

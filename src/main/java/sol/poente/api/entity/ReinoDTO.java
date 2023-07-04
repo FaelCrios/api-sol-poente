@@ -13,6 +13,8 @@ public class ReinoDTO {
 
     private String descricao;
 
+    private String localizacao;
+
     private String afiliacao;
 
     private String img;
@@ -23,14 +25,16 @@ public class ReinoDTO {
         this.id = reino.getId();
         this.nome = reino.getNome();
         this.descricao = reino.getDescricao();
+        this.localizacao = reino.getLocalizacao();
         this.afiliacao = reino.getAfiliacao();
         this.img = reino.getImg();
     }
 
-    public ReinoDTO(Long id, String nome, String descricao, String afiliacao, String img) {
+    public ReinoDTO(Long id, String nome, String descricao,String localizacao, String afiliacao, String img) {
         this.id = id;
         this.nome = nome;
         this.descricao = descricao;
+        this.localizacao = localizacao;
         this.afiliacao = afiliacao;
         this.img = img;
     }
@@ -57,6 +61,14 @@ public class ReinoDTO {
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
+    }
+
+    public String getLocalizacao() {
+        return localizacao;
+    }
+
+    public void setLocalizacao(String localizacao) {
+        this.localizacao = localizacao;
     }
 
     public String getAfiliacao() {

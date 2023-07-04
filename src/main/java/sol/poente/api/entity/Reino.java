@@ -21,15 +21,20 @@ public class Reino {
     @Column(name = "afiliacao")
     private String afiliacao;
 
+    @Column(name = "localizacao")
+    private String localizacao;
+
     @Column(name = "img")
     private String img;
 
-    public Reino(){}
+    public Reino() {
+    }
 
-    public Reino(Long id, String nome, String descricao, String afiliacao, String img) {
+    public Reino(Long id, String nome, String descricao, String localizacao, String afiliacao, String img) {
         this.id = id;
         this.nome = nome;
         this.descricao = descricao;
+        this.localizacao = localizacao;
         this.afiliacao = afiliacao;
         this.img = img;
     }
@@ -58,6 +63,14 @@ public class Reino {
         this.descricao = descricao;
     }
 
+    public String getLocalizacao() {
+        return localizacao;
+    }
+
+    public void setLocalizacao(String localizacao) {
+        this.localizacao = localizacao;
+    }
+
     public String getAfiliacao() {
         return afiliacao;
     }
@@ -79,11 +92,11 @@ public class Reino {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Reino reino = (Reino) o;
-        return Objects.equals(id, reino.id) && Objects.equals(nome, reino.nome) && Objects.equals(descricao, reino.descricao) && Objects.equals(afiliacao, reino.afiliacao) && Objects.equals(img, reino.img);
+        return Objects.equals(id, reino.id) && Objects.equals(nome, reino.nome) && Objects.equals(descricao, reino.descricao) && Objects.equals(afiliacao, reino.afiliacao) && Objects.equals(localizacao, reino.localizacao) && Objects.equals(img, reino.img);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, nome, descricao, afiliacao, img);
+        return Objects.hash(id, nome, descricao, afiliacao, localizacao, img);
     }
 }
